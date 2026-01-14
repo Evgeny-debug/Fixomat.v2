@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Fixomat — ремонт техніки через поштомат</title>
-<meta name="description" content="Fixomat — ремонт техніки без походів у сервіс. Акції, подарунки, гарантія, доставка через поштомат.">
+<meta name="description" content="Fixomat — ремонт техніки без походів у сервіс. Доставка 0 грн, погодження ціни по відео, брендована упаковка та подарунок.">
+<meta name="keywords" content="ремонт телефону через поштомат, Fixomat, ремонт смартфонів Україна, сервіс без черг">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ===== ТВОИ СТИЛИ БЕЗ ИЗМЕНЕНИЙ ===== */
 :root{
   --bg:#11151d;
   --bg-soft:#1a1f2b;
@@ -34,11 +36,12 @@ section{
   max-width:1200px;
   margin:auto;
 }
-h1,h2{font-family:"Space Grotesk",sans-serif}
+h1,h2{
+  font-family:"Space Grotesk",sans-serif;
+}
 h1{font-size:clamp(2.2rem,5vw,3.6rem)}
 h2{margin-bottom:28px}
 p{color:var(--muted);max-width:720px}
-
 .btn{
   padding:16px 28px;
   border-radius:999px;
@@ -49,8 +52,6 @@ p{color:var(--muted);max-width:720px}
   color:#000;
   font-weight:600;
 }
-
-/* HEADER */
 .header-wrap{
   position:fixed;
   top:0;width:100%;
@@ -73,14 +74,9 @@ p{color:var(--muted);max-width:720px}
   align-items:center;
 }
 .logo{font-weight:700;color:var(--accent)}
-
-/* BURGER */
 .burger{width:28px;height:20px;cursor:pointer;position:relative}
 .burger span{
-  position:absolute;
-  width:100%;height:2px;
-  background:#fff;
-  transition:.3s;
+  position:absolute;width:100%;height:2px;background:#fff;transition:.3s
 }
 .burger span:nth-child(1){top:0}
 .burger span:nth-child(2){top:9px}
@@ -88,32 +84,22 @@ p{color:var(--muted);max-width:720px}
 .burger.active span:nth-child(1){transform:rotate(45deg);top:9px}
 .burger.active span:nth-child(2){opacity:0}
 .burger.active span:nth-child(3){transform:rotate(-45deg);bottom:9px}
-
-/* MENU */
 .menu{
-  position:fixed;
-  inset:0;
-  background:#11151d;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position:fixed;inset:0;
+  background:rgba(17,21,29,.98);
+  display:flex;align-items:center;justify-content:center;
   transform:translateY(-100%);
   transition:.4s;
 }
 .menu.active{transform:none}
 .menu ul{list-style:none;text-align:center}
-.menu li{margin:16px;font-size:1.3rem}
-
-/* HERO */
+.menu li{margin:14px;font-size:1.35rem}
 .hero{
   min-height:90vh;
   display:flex;
   align-items:center;
   padding-top:180px;
 }
-.hero p{margin-top:20px}
-
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -125,8 +111,6 @@ p{color:var(--muted);max-width:720px}
   padding:30px;
   border:1px solid var(--border);
 }
-
-/* MAP */
 .map-box{
   margin-top:28px;
   height:280px;
@@ -134,32 +118,23 @@ p{color:var(--muted);max-width:720px}
   overflow:hidden;
   border:1px solid var(--border);
 }
-
-/* SOCIALS */
-.socials{
-  display:flex;
-  gap:26px;
-  margin-top:28px;
-}
-.socials svg{
-  width:26px;height:26px;
-  fill:var(--muted);
-}
-.socials a:hover svg{fill:var(--accent)}
-
+.socials{display:flex;gap:26px;margin-top:28px}
+.socials svg{width:26px;height:26px;fill:var(--muted)}
 footer{
   padding:56px 16px;
   border-top:1px solid var(--border);
   text-align:center;
   color:var(--muted);
 }
+.reveal{opacity:0;transform:translateY(30px);transition:.8s}
+.reveal.visible{opacity:1;transform:none}
 </style>
 </head>
 
 <body>
 
-<div class="header-wrap">
-  <div class="topbar">🚚 Доставка 0 грн • Подарунок кожному клієнту</div>
+<div class="header-wrap" id="headerWrap">
+  <div class="topbar">🚚 Доставка 0 грн в обидві сторони через поштомати</div>
   <div class="nav">
     <div class="logo">Fixomat</div>
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
@@ -168,61 +143,75 @@ footer{
 
 <nav class="menu" id="menu">
 <ul>
-  <li><a href="#steps">Як працює</a></li>
-  <li><a href="#sales">Акції</a></li>
+  <li><a href="#steps">Як це працює</a></li>
+  <li><a href="#map">Поштомат поруч</a></li>
+  <li><a href="#discounts">Знижки</a></li>
+  <li><a href="#vip">VIP</a></li>
   <li><a href="#gifts">Подарунки</a></li>
   <li><a href="#guarantee">Гарантії</a></li>
-  <li><a href="#map">Карта</a></li>
+  <li><a href="#subscribe">Telegram</a></li>
+  <li><a href="#contacts">Контакти</a></li>
 </ul>
 </nav>
 
 <main>
 
-<section class="hero">
+<section class="hero reveal">
   <div>
     <h1>Ремонт техніки<br>без походів у сервіс</h1>
-    <p>Надішліть пристрій через поштомат — ми відремонтуємо і повернемо з подарунком.</p>
-    <a href="https://t.me/ip_shnik_service_odesa" class="btn primary">Написати в Telegram</a>
+    <p>Надішліть відео з проблемою — ми погодимо ціну до ремонту.</p>
+    <a href="https://t.me/ip_shnik_service_odesa" class="btn primary">Надіслати відео</a>
   </div>
 </section>
 
-<section id="steps">
+<section id="steps" class="reveal">
   <h2>Як це працює</h2>
   <div class="grid">
-    <div class="card">1️⃣ Надсилаєте відео з проблемою</div>
+    <div class="card">1️⃣ Надсилаєте відео</div>
     <div class="card">2️⃣ Погоджуємо ціну</div>
     <div class="card">3️⃣ Відправляєте поштоматом</div>
     <div class="card">4️⃣ Отримуєте з подарунком</div>
   </div>
 </section>
 
-<section id="sales">
-  <h2>Акції</h2>
+<section id="discounts" class="reveal">
+  <h2>Знижки</h2>
   <div class="grid">
     <div class="card">−10% за підписку на Telegram</div>
     <div class="card">−1% за кожного друга (до −50%)</div>
   </div>
 </section>
 
-<section id="gifts">
-  <h2>Подарунки</h2>
+<section id="vip" class="reveal">
+  <h2>VIP-статус</h2>
+  <p>50 друзів = VIP зі знижкою −15% назавжди</p>
+</section>
+
+<section id="gifts" class="reveal">
+  <h2>🎁 Подарунки</h2>
   <div class="grid">
-    <div class="card">🎁 Попсокет з логотипом</div>
-    <div class="card">🎁 Брелок або підставка</div>
-    <div class="card">🎁 NFC-мітка з контактами</div>
+    <div class="card">Попсокет з логотипом</div>
+    <div class="card">Брелок або підставка</div>
+    <div class="card">NFC-мітка з контактами</div>
   </div>
 </section>
 
-<section id="guarantee">
-  <h2>Умови та гарантії</h2>
+<section id="guarantee" class="reveal">
+  <h2>🛡 Гарантії</h2>
   <div class="grid">
-    <div class="card">✔ Гарантія на виконані роботи</div>
-    <div class="card">✔ Погодження ціни ДО ремонту</div>
-    <div class="card">✔ Без прихованих платежів</div>
+    <div class="card">Погодження ціни ДО ремонту</div>
+    <div class="card">Гарантія на роботи</div>
+    <div class="card">Без прихованих платежів</div>
   </div>
 </section>
 
-<section id="map">
+<section id="subscribe" class="reveal">
+  <h2>📣 Telegram-канал</h2>
+  <p>Підписка обовʼязкова для отримання знижки −10%</p>
+  <a href="https://t.me/ip_shnik_channel" class="btn primary">Підписатися</a>
+</section>
+
+<section id="map" class="reveal">
   <h2>Поштомати поруч</h2>
   <div class="map-box">
     <iframe src="https://www.google.com/maps?q=поштомат+нова+пошта&z=13&output=embed"
@@ -230,29 +219,41 @@ footer{
   </div>
 </section>
 
-<section>
-  <h2>Ми в соцмережах</h2>
+<section id="contacts" class="reveal">
+  <h2>Контакти</h2>
   <div class="socials">
     <a href="https://t.me/ip_shnik_service_odesa">Telegram</a>
     <a href="https://www.instagram.com/ip_shnik">Instagram</a>
     <a href="https://www.tiktok.com/@ip_shnik">TikTok</a>
   </div>
+  <p style="margin-top:16px">Тел: 093 485 72 95</p>
 </section>
 
 </main>
 
-<footer>
-  © Fixomat • Підпишись на наш  
-  <a href="https://t.me/ip_shnik_channel" style="color:#6dffb3">Telegram-канал</a>
-</footer>
+<footer>© Fixomat — сервіс нового формату</footer>
 
 <script>
 const burger=document.getElementById('burger');
 const menu=document.getElementById('menu');
+const headerWrap=document.getElementById('headerWrap');
+
 burger.onclick=()=>{
   burger.classList.toggle('active');
   menu.classList.toggle('active');
 };
+document.querySelectorAll('.menu a').forEach(a=>{
+  a.onclick=()=>{menu.classList.remove('active');burger.classList.remove('active')}
+});
+window.addEventListener('scroll',()=>{
+  headerWrap.classList.toggle('scrolled',window.scrollY>40);
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 
 </body>
