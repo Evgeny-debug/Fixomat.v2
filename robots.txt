@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://evgeny-debug.github.io/Fixomat.v2/sitemap.xml
