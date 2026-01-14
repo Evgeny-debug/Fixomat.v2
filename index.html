@@ -4,52 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fixomat — ремонт телефонів через поштомат по Україні</title>
-<meta name="description" content="Fixomat — ремонт телефонів без походів у сервіс. Акції, подарунки, гарантія, доставка через поштомат.">
-<meta name="robots" content="index, follow">
+<title>Fixomat — ремонт техніки через поштомат</title>
+<meta name="description" content="Fixomat — ремонт техніки без походів у сервіс. Акції, подарунки, гарантія, доставка через поштомат.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0f1320;
-  --bg-soft:#171c2e;
+  --bg:#11151d;
+  --bg-soft:#1a1f2b;
+  --header-bg:rgba(17,21,29,.75);
+  --header-bg-scrolled:rgba(17,21,29,.95);
   --text:#f4f6fb;
-  --muted:#a2a8b8;
+  --muted:#a6adbb;
   --accent:#6dffb3;
   --border:rgba(255,255,255,.08);
-  --radius:22px;
+  --radius:20px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:Inter,sans-serif;
   background:var(--bg);
   color:var(--text);
+  line-height:1.65;
 }
+a{text-decoration:none;color:inherit}
 section{
   padding:96px 16px;
   max-width:1200px;
   margin:auto;
 }
-h1,h2,h3{
-  font-family:"Space Grotesk",sans-serif;
-  margin-bottom:16px;
+h1,h2{font-family:"Space Grotesk",sans-serif}
+h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+h2{margin-bottom:28px}
+p{color:var(--muted);max-width:720px}
+
+.btn{
+  padding:16px 28px;
+  border-radius:999px;
+  border:1px solid var(--border);
 }
-p{color:var(--muted)}
-a{text-decoration:none;color:inherit}
+.btn.primary{
+  background:var(--accent);
+  color:#000;
+  font-weight:600;
+}
 
 /* HEADER */
-.header{
+.header-wrap{
   position:fixed;
-  top:0;left:0;right:0;
-  background:rgba(15,19,32,.85);
-  backdrop-filter:blur(14px);
-  z-index:1000;
+  top:0;width:100%;
+  background:var(--header-bg);
+  backdrop-filter:blur(16px);
+  z-index:300;
 }
 .topbar{
   text-align:center;
   padding:10px;
-  font-size:.9rem;
   color:var(--accent);
   border-bottom:1px solid var(--border);
 }
@@ -64,11 +75,12 @@ a{text-decoration:none;color:inherit}
 .logo{font-weight:700;color:var(--accent)}
 
 /* BURGER */
-.burger{
-  width:28px;height:20px;cursor:pointer;position:relative;
-}
+.burger{width:28px;height:20px;cursor:pointer;position:relative}
 .burger span{
-  position:absolute;left:0;width:100%;height:2px;background:#fff;transition:.3s
+  position:absolute;
+  width:100%;height:2px;
+  background:#fff;
+  transition:.3s;
 }
 .burger span:nth-child(1){top:0}
 .burger span:nth-child(2){top:9px}
@@ -79,34 +91,27 @@ a{text-decoration:none;color:inherit}
 
 /* MENU */
 .menu{
-  position:fixed;inset:0;
-  background:#0f1320;
-  display:flex;align-items:center;justify-content:center;
+  position:fixed;
+  inset:0;
+  background:#11151d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   transform:translateY(-100%);
   transition:.4s;
 }
 .menu.active{transform:none}
 .menu ul{list-style:none;text-align:center}
-.menu li{margin:18px;font-size:1.4rem}
+.menu li{margin:16px;font-size:1.3rem}
 
 /* HERO */
 .hero{
-  min-height:100vh;
+  min-height:90vh;
   display:flex;
   align-items:center;
   padding-top:180px;
 }
-.hero p{margin-top:16px;max-width:700px}
-
-/* BUTTONS */
-.btn{
-  padding:16px 28px;
-  border-radius:999px;
-  display:inline-block;
-  border:1px solid var(--border);
-  margin-top:28px;
-}
-.primary{background:var(--accent);color:#000;font-weight:600}
+.hero p{margin-top:20px}
 
 /* GRID */
 .grid{
@@ -122,14 +127,26 @@ a{text-decoration:none;color:inherit}
 }
 
 /* MAP */
-.map{
-  margin-top:24px;
-  height:300px;
-  border-radius:20px;
+.map-box{
+  margin-top:28px;
+  height:280px;
+  border-radius:22px;
   overflow:hidden;
+  border:1px solid var(--border);
 }
 
-/* FOOTER */
+/* SOCIALS */
+.socials{
+  display:flex;
+  gap:26px;
+  margin-top:28px;
+}
+.socials svg{
+  width:26px;height:26px;
+  fill:var(--muted);
+}
+.socials a:hover svg{fill:var(--accent)}
+
 footer{
   padding:56px 16px;
   border-top:1px solid var(--border);
@@ -141,35 +158,30 @@ footer{
 
 <body>
 
-<header class="header">
+<div class="header-wrap">
   <div class="topbar">🚚 Доставка 0 грн • Подарунок кожному клієнту</div>
   <div class="nav">
     <div class="logo">Fixomat</div>
-    <div class="burger" id="burger">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
-</header>
+</div>
 
 <nav class="menu" id="menu">
-  <ul>
-    <li><a href="#steps">Як працює</a></li>
-    <li><a href="#sales">Акції</a></li>
-    <li><a href="#gifts">Подарунки</a></li>
-    <li><a href="#guarantee">Гарантії</a></li>
-    <li><a href="#map">Карта</a></li>
-  </ul>
+<ul>
+  <li><a href="#steps">Як працює</a></li>
+  <li><a href="#sales">Акції</a></li>
+  <li><a href="#gifts">Подарунки</a></li>
+  <li><a href="#guarantee">Гарантії</a></li>
+  <li><a href="#map">Карта</a></li>
+</ul>
 </nav>
 
 <main>
 
 <section class="hero">
   <div>
-    <h1>Ремонт телефонів без походів у сервіс</h1>
-    <p>
-      Ви надсилаєте телефон через поштомат, ми ремонтуємо та повертаємо назад.
-      Все просто, швидко і з гарантією.
-    </p>
+    <h1>Ремонт техніки<br>без походів у сервіс</h1>
+    <p>Надішліть пристрій через поштомат — ми відремонтуємо і повернемо з подарунком.</p>
     <a href="https://t.me/ip_shnik_service_odesa" class="btn primary">Написати в Telegram</a>
   </div>
 </section>
@@ -177,22 +189,23 @@ footer{
 <section id="steps">
   <h2>Як це працює</h2>
   <div class="grid">
-    <div class="card">📦 Відправляєте телефон через поштомат</div>
-    <div class="card">🔧 Ми ремонтуємо і погоджуємо ціну</div>
-    <div class="card">🎁 Повертаємо з подарунком</div>
+    <div class="card">1️⃣ Надсилаєте відео з проблемою</div>
+    <div class="card">2️⃣ Погоджуємо ціну</div>
+    <div class="card">3️⃣ Відправляєте поштоматом</div>
+    <div class="card">4️⃣ Отримуєте з подарунком</div>
   </div>
 </section>
 
 <section id="sales">
   <h2>Акції</h2>
   <div class="grid">
-    <div class="card">🔥 -10% при першому зверненні</div>
-    <div class="card">🔥 Безкоштовна доставка</div>
+    <div class="card">−10% за підписку на Telegram</div>
+    <div class="card">−1% за кожного друга (до −50%)</div>
   </div>
 </section>
 
 <section id="gifts">
-  <h2>Подарунки клієнтам</h2>
+  <h2>Подарунки</h2>
   <div class="grid">
     <div class="card">🎁 Попсокет з логотипом</div>
     <div class="card">🎁 Брелок або підставка</div>
@@ -203,16 +216,26 @@ footer{
 <section id="guarantee">
   <h2>Умови та гарантії</h2>
   <div class="grid">
-    <div class="card">✔ Гарантія на ремонт</div>
+    <div class="card">✔ Гарантія на виконані роботи</div>
     <div class="card">✔ Погодження ціни ДО ремонту</div>
     <div class="card">✔ Без прихованих платежів</div>
   </div>
 </section>
 
 <section id="map">
-  <h2>Ми працюємо по всій Україні</h2>
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2747.208421408561!2d30.723309!3d46.482526" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+  <h2>Поштомати поруч</h2>
+  <div class="map-box">
+    <iframe src="https://www.google.com/maps?q=поштомат+нова+пошта&z=13&output=embed"
+      width="100%" height="100%" style="border:0" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>Ми в соцмережах</h2>
+  <div class="socials">
+    <a href="https://t.me/ip_shnik_service_odesa">Telegram</a>
+    <a href="https://www.instagram.com/ip_shnik">Instagram</a>
+    <a href="https://www.tiktok.com/@ip_shnik">TikTok</a>
   </div>
 </section>
 
