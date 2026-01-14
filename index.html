@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ремонт телефонів і техніки через поштомат по Україні | Fixomat</title>
-<meta name="description" content="Fixomat — ремонт телефонів та техніки без походів у сервіс. Акції, подарунки, гарантія. Відправка і повернення через поштомат по Україні.">
+<meta name="description" content="Fixomat — ремонт телефонів та техніки без походів у сервіс. Акції, подарунки, гарантія. Відправка і повернення через поштомат.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://evgeny-debug.github.io/Fixomat.v2/">
 
@@ -46,60 +46,94 @@ h1,h2,h3{
 }
 h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.15}
 h2{font-size:2rem;margin-bottom:24px}
-h3{font-size:1.2rem;margin-bottom:10px}
 p{color:var(--muted);max-width:780px}
 
+/* BUTTONS */
 .btn{
   padding:16px 28px;
   border-radius:999px;
   border:1px solid var(--border);
   transition:.25s;
   display:inline-block;
-  text-align:center;
 }
 .btn.primary{background:var(--accent);color:#000;font-weight:600}
 .btn.secondary:hover{border-color:var(--accent);color:var(--accent)}
 
+/* HEADER */
 .header-wrap{
-  position:fixed;top:0;width:100%;z-index:300;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:300;
   background:var(--header-bg);
   backdrop-filter:blur(16px);
 }
 .topbar{
-  text-align:center;font-size:.9rem;color:var(--accent);
-  padding:10px 16px;border-bottom:1px solid var(--border);
+  text-align:center;
+  font-size:.9rem;
+  color:var(--accent);
+  padding:10px 16px;
+  border-bottom:1px solid var(--border);
 }
 .nav{
-  max-width:1200px;margin:auto;padding:16px;
-  display:flex;justify-content:space-between;align-items:center;
+  max-width:1200px;
+  margin:auto;
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 .logo{font-weight:700;color:var(--accent)}
 
-.burger{width:28px;height:20px;cursor:pointer;position:relative}
+/* BURGER */
+.burger{
+  width:28px;
+  height:20px;
+  cursor:pointer;
+  position:relative;
+}
 .burger span{
-  position:absolute;left:0;width:100%;height:2px;
-  background:#fff;transition:.3s;
+  position:absolute;
+  left:0;
+  width:100%;
+  height:2px;
+  background:#fff;
+  transition:.3s;
 }
 .burger span:nth-child(1){top:0}
 .burger span:nth-child(2){top:9px}
 .burger span:nth-child(3){bottom:0}
+.burger.active span:nth-child(1){transform:rotate(45deg);top:9px}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){transform:rotate(-45deg);bottom:9px}
 
+/* MENU */
 .menu{
-  position:fixed;inset:0;background:rgba(17,21,29,.98);
-  display:flex;align-items:center;justify-content:center;
-  transform:translateY(-100%);transition:.4s;z-index:200;
+  position:fixed;
+  inset:0;
+  background:rgba(17,21,29,.98);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:translateY(-100%);
+  transition:.4s;
+  z-index:200;
 }
 .menu.active{transform:translateY(0)}
-.menu ul{list-style:none;text-align:center}
-.menu li{margin:14px 0;font-size:1.35rem}
+.menu ul{text-align:center;list-style:none}
+.menu li{margin:16px 0;font-size:1.4rem}
 
+/* HERO */
 .hero{
-  min-height:90vh;display:flex;align-items:center;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
   padding-top:180px;
 }
-.hero p{margin-top:20px;font-size:1.05rem}
+.hero p{margin-top:20px}
 .cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
 
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -112,35 +146,61 @@ p{color:var(--muted);max-width:780px}
   padding:30px;
 }
 
+/* STEPS */
 .step{position:relative;padding-top:42px}
 .step-number{
-  position:absolute;top:16px;left:16px;
-  width:30px;height:30px;border-radius:50%;
-  background:var(--accent);color:#000;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
+  position:absolute;
+  top:16px;
+  left:16px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
+/* MAP */
 .map-box{
-  margin-top:28px;height:280px;border-radius:22px;
-  overflow:hidden;border:1px solid var(--border);
+  margin-top:28px;
+  height:280px;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid var(--border);
 }
 
-.socials{display:flex;gap:26px;margin-top:28px}
-.socials svg{width:26px;height:26px;fill:var(--muted);transition:.25s}
+/* SOCIALS */
+.socials{
+  display:flex;
+  gap:26px;
+  margin-top:28px;
+}
+.socials svg{
+  width:26px;
+  height:26px;
+  fill:var(--muted);
+  transition:.25s;
+}
 .socials a:hover svg{fill:var(--accent)}
 
 footer{
-  padding:56px 16px;border-top:1px solid var(--border);
-  text-align:center;color:var(--muted);font-size:.9rem;
+  padding:56px 16px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem;
 }
 
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(30px);transition:.8s}
 .reveal.visible{opacity:1;transform:none}
 
 @media (max-width:768px){
   section{padding:72px 16px}
   h1{font-size:2.1rem}
-  h2{font-size:1.7rem}
   .cta{flex-direction:column}
   .btn{width:100%}
 }
@@ -153,8 +213,21 @@ footer{
   <div class="topbar">🚚 Доставка 0 грн в обидві сторони через поштомат</div>
   <div class="nav">
     <div class="logo">Fixomat</div>
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </div>
+
+<nav class="menu" id="menu">
+  <ul>
+    <li><a href="#steps">Як це працює</a></li>
+    <li><a href="#discounts">Акції</a></li>
+    <li><a href="#map">Поштомати</a></li>
+    <li><a href="#schedule">Графік</a></li>
+    <li><a href="#contacts">Контакти</a></li>
+  </ul>
+</nav>
 
 <main>
 
@@ -163,8 +236,8 @@ footer{
     <h1>Ремонт телефонів та техніки через поштомат по Україні</h1>
     <p>
       Надішліть відео з проблемою в Telegram.
-      Ми погоджуємо ціну до ремонту, після чого ви відправляєте пристрій
-      через поштомат і отримуєте його назад у брендованій упаковці з подарунком.
+      Погоджуємо ціну до ремонту та повертаємо пристрій
+      у брендованій упаковці з подарунком.
     </p>
     <div class="cta">
       <a href="https://t.me/ip_shnik_service_odesa" class="btn primary">Надіслати відео</a>
@@ -173,69 +246,24 @@ footer{
   </div>
 </section>
 
-<section id="steps" class="reveal">
-  <h2>Як це працює</h2>
-  <div class="grid">
-    <div class="card step"><div class="step-number">1</div>Ви надсилаєте відео з проблемою</div>
-    <div class="card step"><div class="step-number">2</div>Ми погоджуємо вартість ремонту</div>
-    <div class="card step"><div class="step-number">3</div>Ви відправляєте пристрій через поштомат</div>
-    <div class="card step"><div class="step-number">4</div>Отримуєте техніку з подарунком</div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Акції та знижки</h2>
-  <div class="grid">
-    <div class="card">🎁 −10% за підписку на Telegram-канал</div>
-    <div class="card">👥 −1% за кожного запрошеного друга (до −50%)</div>
-    <div class="card">⭐ VIP −15% назавжди після 50 запрошених</div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Подарунки клієнтам</h2>
-  <p>
-    Кожен клієнт Fixomat отримує невеликий подарунок:
-    брендований аксесуар, корисний тримач або інший приємний бонус.
-    Також у пакуванні є NFC-мітка з контактами сервісу.
-  </p>
-</section>
-
-<section class="reveal">
-  <h2>Умови та гарантії</h2>
-  <div class="grid">
-    <div class="card">✔️ Гарантія на ремонт — до 30 днів</div>
-    <div class="card">✔️ Ремонт тільки після погодження ціни</div>
-    <div class="card">✔️ Дані клієнта не копіюються і не зберігаються</div>
-    <div class="card">✔️ Відмова від ремонту — безкоштовна</div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Поштомати поруч</h2>
-  <div class="map-box">
-    <iframe
-      src="https://www.google.com/maps?q=поштомат+нова+пошта&z=12&output=embed"
-      width="100%" height="100%" style="border:0" loading="lazy">
-    </iframe>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Графік роботи</h2>
-  <div class="grid">
-    <div class="card"><strong>Пн–Пт</strong><br>10:00 – 19:00</div>
-    <div class="card"><strong>Сб</strong><br>11:00 – 16:00</div>
-    <div class="card"><strong>Нд</strong><br>Вихідний</div>
-  </div>
-</section>
-
 <section id="contacts" class="reveal">
   <h2>Контакти</h2>
   <a href="tel:+380934857295">📞 +38 (093) 485-72-95</a>
+
   <div class="socials">
+    <!-- Telegram -->
     <a href="https://t.me/ip_shnik_service_odesa" target="_blank" aria-label="Telegram">
       <svg viewBox="0 0 24 24"><path d="M9.04 15.44l-.38 5.34c.54 0 .78-.23 1.06-.5l2.54-2.44 5.27 3.86c.97.54 1.66.26 1.92-.9l3.48-16.3c.34-1.57-.57-2.19-1.52-1.82L1.12 9.38c-1.52.6-1.5 1.45-.28 1.82l5.46 1.7L19.6 5.1c.62-.4 1.18-.18.72.23"/></svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/ip_shnik" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.5 6.2a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/></svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@ip_shnik" target="_blank" aria-label="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M16.7 5.3c-1-.9-1.6-2.2-1.6-3.6h-3.2v13.1c0 1.5-1.2 2.7-2.7 2.7s-2.7-1.2-2.7-2.7 1.2-2.7 2.7-2.7c.3 0 .6.05.9.14V8.9c-.3-.04-.6-.06-.9-.06-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V9.4c1.2.9 2.7 1.4 4.2 1.4V7.6c-1.3 0-2.6-.5-3.4-1.3z"/></svg>
     </a>
   </div>
 </section>
@@ -245,9 +273,30 @@ footer{
 <footer>© Fixomat — ремонт техніки без походів у сервіс</footer>
 
 <script>
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu');
+
+burger.onclick = () => {
+  burger.classList.toggle('active');
+  menu.classList.toggle('active');
+};
+
+document.querySelectorAll('.menu a').forEach(link=>{
+  link.onclick = ()=>{
+    burger.classList.remove('active');
+    menu.classList.remove('active');
+  };
+});
+
 const observer=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible')}})
+  e.forEach(x=>{
+    if(x.isIntersecting){
+      x.target.classList.add('visible');
+      observer.unobserve(x.target);
+    }
+  });
 },{threshold:.15});
+
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 
