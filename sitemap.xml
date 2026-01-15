@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Главная страница -->
   <url>
     <loc>https://evgeny-debug.github.io/Fixomat.v2/</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Секции на странице -->
   <url>
     <loc>https://evgeny-debug.github.io/Fixomat.v2/#steps</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://evgeny-debug.github.io/Fixomat.v2/#discounts</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evgeny-debug.github.io/Fixomat.v2/#vip</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evgeny-debug.github.io/Fixomat.v2/#gifts</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evgeny-debug.github.io/Fixomat.v2/#guarantee</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evgeny-debug.github.io/Fixomat.v2/#subscribe</loc>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://evgeny-debug.github.io/Fixomat.v2/#map</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://evgeny-debug.github.io/Fixomat.v2/#discounts</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <url>
+    <loc>https://evgeny-debug.github.io/Fixomat.v2/#vip</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://evgeny-debug.github.io/Fixomat.v2/#schedule</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://evgeny-debug.github.io/Fixomat.v2/#about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <url>
     <loc>https://evgeny-debug.github.io/Fixomat.v2/#contacts</loc>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
