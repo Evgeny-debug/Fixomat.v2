@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Подарки Fixomat</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#11151d;
+--bg-soft:#1a1f2b;
+--header-bg:rgba(17,21,29,.75);
+--text:#f4f6fb;
+--muted:#a6adbb;
+--accent:#6dffb3;
+--border:rgba(255,255,255,.08);
+--radius:20px
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Inter,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.65;
+}
+
+a{text-decoration:none;color:inherit}
+
+section{
+padding:96px 16px;
+max-width:1200px;
+margin:auto;
+}
+
+h1,h2{
+font-family:"Space Grotesk",sans-serif;
+letter-spacing:-0.02em
+}
+
+h1{
+font-size:clamp(2.2rem,5vw,3.2rem);
+margin-bottom:20px;
+}
+
+.btn{
+padding:16px 28px;
+border-radius:999px;
+border:1px solid var(--border);
+transition:.25s;
+display:inline-block;
+text-align:center;
+}
+
+.btn.primary{
+background:var(--accent);
+color:#000;
+font-weight:600;
+}
+
+/* ===== ШАПКА ===== */
+.header-wrap{
+position:fixed;
+top:0;
+width:100%;
+z-index:300;
+background:var(--header-bg);
+backdrop-filter:blur(16px);
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+padding:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:700;
+color:var(--accent);
+}
+
+/* ===== СЕТКА ПОДАРКОВ ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:26px;
+margin-top:40px;
+}
+
+.card{
+background:var(--bg-soft);
+border:1px solid var(--border);
+border-radius:var(--radius);
+padding:24px;
+text-align:left;
+}
+
+/* ===== БЛОК СМЕНЫ ИЗОБРАЖЕНИЙ ===== */
+.img-swap{
+position:relative;
+width:100%;
+overflow:hidden;
+border-radius:14px;
+margin-bottom:14px;
+cursor:pointer;
+}
+
+.img-swap img{
+width:100%;
+height:auto;
+border-radius:14px;
+transition:.35s;
+display:block;
+}
+
+.img-swap .back{
+position:absolute;
+top:0;
+left:0;
+opacity:0;
+}
+
+/* На ПК — смена при наведении */
+@media (hover:hover){
+  .img-swap:hover .back{opacity:1;}
+  .img-swap:hover .front{opacity:0;}
+}
+
+/* На телефоне — смена по тапу */
+.img-swap.tapped .back{opacity:1;}
+.img-swap.tapped .front{opacity:0;}
+
+/* центр кнопки */
+.center{
+text-align:center;
+margin-top:50px;
+}
+
+/* мобильная адаптация */
+@media(max-width:768px){
+section{padding:72px 16px}
+.grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ШАПКА В СТИЛЕ ОСНОВНОГО САЙТА -->
+<div class="header-wrap">
+  <div class="nav">
+    <div class="logo">Fixomat</div>
+    <a href="index.html" class="btn">← Назад</a>
+  </div>
+</div>
+
+<main style="padding-top:120px">
+
+<section>
+<h1>🎁 Наші подарунки</h1>
+<p>Кожен клієнт отримує приємний бонус разом із відремонтованим пристроєм.</p>
+
+<div class="grid">
+
+<!-- ПОДАРОК 1 -->
+<div class="card">
+  <div class="img-swap">
+    <img src="gift1.jpg" class="front" alt="Брендований ніж візитка">
+    <img src="gift1_alt.jpg" class="back" alt="ніж візитка — інший ракурс">
+  </div>
+  <h3>Брендований ніж візитка</h3>
+  <p>Складний ніж, який поміститься в твоєму гаманці.</p>
+</div>
+
+<!-- ПОДАРОК 2 -->
+<div class="card">
+  <div class="img-swap">
+    <img src="gift2.jpg" class="front" alt="Підставка">
+    <img src="gift2_alt.jpg" class="back" alt="Підставка — інший ракурс">
+  </div>
+  <h3>Підставка</h3>
+  <p>Користуйся гаджетом ще зручніше.</p>
+</div>
+
+<!-- ПОДАРОК 3 -->
+<div class="card">
+  <div class="img-swap">
+    <img src="gift3.jpg" class="front" alt="Брелок Fixomat">
+    <img src="gift3_alt.jpg" class="back" alt="Брелок — інший ракурс">
+  </div>
+  <h3>Брелок</h3>
+  <p>Металевий брелок у фірмовому стилі, з вікрутками.</p>
+</div>
+
+</div>
+
+<div class="center">
+<a href="https://t.me/o_ip_shnik" class="btn primary">
+Купити мерч у Telegram
+</a>
+</div>
+
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.img-swap').forEach(box=>{
+  box.addEventListener('click', ()=>{
+    box.classList.toggle('tapped');
+  });
+});
+</script>
+
+</body>
+</html>
